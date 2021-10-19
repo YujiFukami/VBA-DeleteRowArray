@@ -13,7 +13,7 @@ Option Explicit
 '------------------------------
 
 
-Public Function DeleteRowArray(Array2D, DeleteRow&)
+Public Function DeleteRowArray(Array2D, DeleteRow As Long)
 '二次元配列の指定行を消去した配列を出力する
 '20210917
 
@@ -25,7 +25,11 @@ Public Function DeleteRowArray(Array2D, DeleteRow&)
     Call CheckArray2D(Array2D, "Array2D")
     Call CheckArray2DStart1(Array2D, "Array2D")
     
-    Dim I&, J&, K&, M&, N& '数え上げ用(Long型)
+    Dim I As Long
+    Dim J As Long
+    Dim K As Long
+    Dim M As Long
+    Dim N As Long
     N = UBound(Array2D, 1) '行数
     M = UBound(Array2D, 2) '列数
     
@@ -57,11 +61,12 @@ Public Function DeleteRowArray(Array2D, DeleteRow&)
 
 End Function
 
-Private Sub CheckArray2D(InputArray, Optional HairetuName$ = "配列")
+Private Sub CheckArray2D(InputArray, Optional HairetuName As String = "配列")
 '入力配列が2次元配列かどうかチェックする
 '20210804
 
-    Dim Dummy2%, Dummy3%
+    Dim Dummy2 As Integer
+    Dim Dummy3 As Integer
     On Error Resume Next
     Dummy2 = UBound(InputArray, 2)
     Dummy3 = UBound(InputArray, 3)
@@ -74,7 +79,7 @@ Private Sub CheckArray2D(InputArray, Optional HairetuName$ = "配列")
 
 End Sub
 
-Private Sub CheckArray2DStart1(InputArray, Optional HairetuName$ = "配列")
+Private Sub CheckArray2DStart1(InputArray, Optional HairetuName As String = "配列")
 '入力2次元配列の開始番号が1かどうかチェックする
 '20210804
 

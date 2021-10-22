@@ -5,12 +5,6 @@ Option Explicit
 'CheckArray2D      ・・・元場所：FukamiAddins3.ModArray
 'CheckArray2DStart1・・・元場所：FukamiAddins3.ModArray
 
-'------------------------------
-
-
-'配列の処理関係のプロシージャ
-
-'------------------------------
 
 
 Public Function DeleteRowArray(Array2D, DeleteRow As Long)
